@@ -73,6 +73,17 @@ UPDATE david 07700000000
 OK last no was - 07900001234
 ```
 
-5. You are only allowed to store the telephone number a number type as a string would be too big  
+5. (optional for bonus points) Have an option to delete/remove a number. You don't have to return anything
+```
+DEL 02080000110
+OK
+```
+
+6. You are only allowed to store the telephone number a number type as a string would be too big  
+
+7. You only allowed to store 4 characters of the name, Or if it's easier store the name as an int.
+
+
+
 
 These restrictions might cause a name/number pair to accidentally override another but this is acceptable  
