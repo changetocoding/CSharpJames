@@ -73,6 +73,6 @@ UPDATE david 07700000000
 OK last no was - 07900001234
 ```
 
-5. You are only allowed to store the telephone number as a long as a string would be too big  
+5. You are only allowed to store the telephone number a number type as a string would be too big  
 
 These restrictions might cause a name/number pair to accidentally override another but this is acceptable  
