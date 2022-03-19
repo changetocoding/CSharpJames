@@ -190,26 +190,6 @@ yield return keyword as simpler way of doing it.
 ```
 
 
-# Make your linked list Ienumerable
-Implement (Ienumerable)
-Example here - https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics
-```cs
-        public IEnumerator<T> GetEnumerator()
-        {
-            Node current = head;
-
-            while (current != null)
-            {
-                yield return current.Data;
-                current = current.Next;
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-```
 
 # Gottchas
 Yield return - example 4 in a row
