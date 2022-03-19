@@ -117,32 +117,11 @@
     }
 ```
 
-# Other
+# Linq
 
-
-Linq: Pull vs push
-
-IEnumerable: you can iterate through me
-
-Have to implement 3 things
-
-yield return keyword as simpler way of doing it.
-
-
-
-1. Lists, Arrays ...
-
-2. Iterate
-
-3 for ... /if ... 
-
-4. Ienumberable : list, array, dictionary ... implements this.
-
-
-7. Linq - since enumberables are so important. Lets create some helper methods to do common stuff on them. But we work out how to do it efficently and lazily so you dont have to
-
-
-8. Yield Return Keywords
+- Ienumberable : list, array, dictionary ... implements this.
+- Linq - since enumberables are so important. Lets create some helper methods to do common stuff on them. But c# works out how to do it efficently and lazily so you dont have to.
+- Yield Return Keywords
 ```csharp
         public static IEnumerable<int> DavidsEnumerable2YieldImpl()
         {
@@ -158,8 +137,12 @@ yield return keyword as simpler way of doing it.
         }
 
 ```
+- Lazily executed. Only executes when you need it to
 
-9. Lazily executed. Only executes when you need it to
+
+# Gottchas
+- Lazy vs eager loading - Only executes when you need it to
+- Enumerating twice (Example for. Break on % 4)
 
 
 # Yield return
@@ -189,17 +172,8 @@ yield return keyword as simpler way of doing it.
         }
 ```
 
-
-
-# Gottchas
-Yield return - example 4 in a row
-Example building list to return ,(common pattern)
-
-Lazy vs eager loading
-Enumerating twice (Example for. Break on % 4)
-
  
-# Class Code
+# Some random code
 ```csharp
 class Program
     {
@@ -310,8 +284,9 @@ class Program
 
 
 # Homework
-1. Make linked List generic
-2. Count bi-grams. Given a string count character pairs. E.g "See the sea" 
+### Update your phonebook code!!!
+
+2. (optional) Count bi-grams. Given a string count character pairs. E.g "See the sea" 
 ```
 se - 2
 ee - 1
@@ -341,7 +316,7 @@ I actually got this as part of an interview for a senior role and it's a good ta
 
 
 
-# Home work
+### Home work - Linq
 ```csharp
 using System;
 using System.Collections.Generic;
