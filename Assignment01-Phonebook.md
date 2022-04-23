@@ -45,3 +45,8 @@ OK
 
 
 These restrictions might cause a name/number pair to accidentally override another but this is acceptable  
+
+# Phonebook part 2:
+Requirements: Lesson on reading a file and exception handling
+
+Add a New feature on phone book. Saving: Save the names and numbers to a text file automatically when a new name/number is added. Read from that file at the start
