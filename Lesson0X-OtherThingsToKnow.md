@@ -1,3 +1,58 @@
+# Class code
+
+```cs
+
+    class MyClass
+    {
+
+            // this is a field
+            public int WhatIsThis;
+        //this is a prop!!!
+            public int WhatIsThisToo { get; set; }
+  
+
+        private int _myProp1;
+        public int MyProp
+        {
+            get => _myProp1;
+            set => _myProp1 = value;
+        }
+
+        // Only set in constructor, but anyone can access
+        public int MyProperty { get; }
+        // equivalent - feels dirty
+        public readonly int _myint;
+
+        // Only private set, but anyone can access
+        public int MyProperty2 { get; private set; }
+
+        // Only public access and set
+        public int MyProperty3 { get; set; }
+        // equivalent - feels dirty
+        public int _myint3;
+
+        // interesting sets
+        private int _age;
+        public int Age
+        {
+            get => _age;
+            set
+            {
+                if (value >= 0 && value <= 200)
+                {
+                    _age = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid age");
+                }
+            }
+        }
+
+    }
+```
+
+
 
 ## Structs 
 Common interview question - "what is the difference between a struct and a class"
