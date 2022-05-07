@@ -1,4 +1,4 @@
-
+# Object orientated principle
 abstraction - cell phone/car: interact with few buttons but stuff under hood is hiden from u.  
 encapsulation - privacy: dont want boss to know gone on holiday. But simple as bank balance. ETP: Client is basically one big encapsulation of data so interact through ui. Imagine anyone just writing to db  
 inheritance - Parent. Children inherit it  
