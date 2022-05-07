@@ -6,12 +6,13 @@ polymorphism - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/
 
 Overriding vs overloading
 
-Solid
-S  
-O  
-L  
-I  
-D  
+Solid:
+https://en.wikipedia.org/wiki/SOLID 
+S  - Single responsiblity principle  
+O  - Open/Close principle
+L  - Listov principle  
+I  - Interface segregation  
+D  - Dependency Inversion  
 
 
 - List  
