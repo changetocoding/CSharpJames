@@ -170,6 +170,15 @@ enum Cars
 }
 ```
 
+When you are using a string in an if statement check if you can replace with an enum:
+- Is it compile time constant (aka you know all the options it can be already before you run the code)
+
+Enums are good because:
+- You get the Intelligense help
+- It is easy to rename the options
+- You don't get errors for example through misspelling
+
+
 This is bad. Why? and what should you use instead
 ```cs
 switch (type)
@@ -180,6 +189,35 @@ switch (type)
         // code
     default:
         return null;
+}
+```
+
+```cs
+static void Main(string[] args)
+{
+    // String - easy
+    // Enum - fixed, reduces chances errors, autoassit, easy to rename
+    Command command = Command.Read;
+    if (command == Command.Not)
+    {
+
+    }
+    else if (command == Command.Write)
+    {
+
+    }
+    else if (command == Command.Read)
+    {
+
+    }
+}
+
+enum Command
+{
+    Write,
+    Read,
+    Not,
+    Test
 }
 ```
 
