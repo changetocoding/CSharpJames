@@ -5,6 +5,9 @@ Your boss asks you to build a checkout counter (such as in a super market).
 We sell products with the following prices:  
 A:50, B:30, C:20, D:5
 
+### Note:
+For this task submit a project or class for each Task. This will allow us to see the progression as you proceed through the task
+
 ## Task 1
 The checkout must process a string of characters like "ACDAB" and calculate the total cost of the items (in this case 155 = (50+20+5+50+30)
 
