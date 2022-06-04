@@ -1,5 +1,5 @@
 # Homework Checkout
-See 
+See https://github.com/changetocoding/CSharpJames/blob/main/Assignment04-Checkout.md
 
 
 
