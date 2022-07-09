@@ -32,12 +32,34 @@ You already know alot of this so please explain:
 4. When does query get executed
 
 ### Connection strings.
-```csharp
-<connectionStrings>
-  <add name="cerviondemoEntities" connectionString="metadata=res://*/DatabaseModel.cervionEDM.csdl|res://*/DatabaseModel.cervionEDM.ssdl|res://*/DatabaseModel.cervionEDM.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DEVBOX;initial catalog=cerviondemo;user id=sa;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
-</connectionStrings>
+If you used the default setup for your local db your connection string will be
 ```
+Server=(localdb)\MSSQLLocalDB;Integrated Security=true;Initial Catalog=[Name of db you created];App=EntityFramework
+```
+See this to understand why - https://docs.microsoft.com/en-us/previous-versions/aspnet/jj653752(v=vs.110)?redirectedfrom=MSDN
 This is your connection to your database
+
+
+### Scaffolding DB:
+You can automatically generate the c# code for a db table using scaffolding
+
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding?tabs=dotnet-core-cli
+
+1. Set db project SwiftProposal.Data as startup project
+2. Open up Package Manager Console
+3. Set default project in the package manager window to SwiftProposal.Data 
+4. Run below
+```
+Scaffold-DbContext "data source=[Your db ConnectionString]" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Scaffolded
+```
+
+Replace with your db connection string. E.g.
+```
+Scaffold-DbContext "data source=(LocalDB)\ProjectsV13;initial catalog=Calyspo;MultipleActiveResultSets=True;App=EntityFramework" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Scaffolded
+```
+
+5. I normally copy relevant bits from the Scaffolded folder
+6. You can specify specific tables using the -table parameter
 
 ### Db context
 Db context is your api for talking to the database
