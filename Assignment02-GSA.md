@@ -18,3 +18,6 @@ In GSA folder you will find a file "pnl.csv". Your task is to transform it into 
 ```
 
 I actually got this as part of an interview for a senior role and it's a good task that included a db and webserver. We'll slowly work through it.
+
+
+# Part 2 - Save to db
