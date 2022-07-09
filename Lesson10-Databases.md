@@ -82,35 +82,8 @@ using(var it = new MyResource()){
 
 # HW.
 
-## Merging datasets  practise of extension methods too
-Group homework. Explain next week.
-We want to combine the companies and employees. How do you go about doing that? And what return type should we use
-
-Then write as an extension method
-```cs
-public class Test {
-    public ??? Merge(List<Company> companies, List<Employee> employees)
-    {
-      
-    }
-}
-
-public class Company
-{
-    public int CompanyId { get; set; }
-    public string Name { get; set; }
-}
-
-public class Employee
-{
-    public int CompanyId { get; set; }
-    public string EmployeeName { get; set; }
-}
-
-```
-
 ## DB 
-- Create a console app that works with the database (inserting new records from the user, querying the database etc...)
+- Update Pnl app to work with db
 
 ### Sql setup
 1. Download Sql server mgt. studio: https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
