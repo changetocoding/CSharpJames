@@ -74,3 +74,21 @@ date: 2017-01-01, cumulativePnl: 2000
 Work together on the task. It may take longer than a week to complete
 
 # Part 3 - Save to db
+Your strategy class should now look more like this
+```cs
+    public partial class Strategy
+    {
+        public Strategy()
+        {
+            Capital = new HashSet<Capital>();
+            Pnl = new HashSet<Pnl>();
+        }
+
+        public int StrategyId { get; set; }
+        public string StratName { get; set; }
+        public string Region { get; set; }
+
+        public ICollection<Capital> Capital { get; set; }
+        public ICollection<Pnl> Pnl { get; set; }
+    }
+```
