@@ -42,17 +42,19 @@ namespace ConsoleApp.Data.Scaffolded
         public virtual DbSet<SalesByCategory> SalesByCategories { get; set; }
         public virtual DbSet<SalesTotalsByAmount> SalesTotalsByAmounts { get; set; }
         public virtual DbSet<Shipper> Shippers { get; set; }
+        public virtual DbSet<Shop> Shops { get; set; }
         public virtual DbSet<SummaryOfSalesByQuarter> SummaryOfSalesByQuarters { get; set; }
         public virtual DbSet<SummaryOfSalesByYear> SummaryOfSalesByYears { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
+        public virtual DbSet<Wine> Wines { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("data source=(LocalDB)\\ProjectsV13;initial catalog=northwind;MultipleActiveResultSets=True;App=EntityFramework");
+                optionsBuilder.UseSqlServer("data source=(LocalDB)\\ProjectsV13;initial catalog=Northwind;MultipleActiveResultSets=True;App=EntityFramework");
             }
         }
 
@@ -724,6 +726,22 @@ namespace ConsoleApp.Data.Scaffolded
                 entity.Property(e => e.Phone).HasMaxLength(24);
             });
 
+            modelBuilder.Entity<Shop>(entity =>
+            {
+                entity.HasKey(e => e.ShopId)
+                    .HasName("PK_shop")
+                    .IsClustered(false);
+
+                entity.ToTable("Shop");
+
+                entity.Property(e => e.ShopId).HasColumnName("ShopID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+            });
+
             modelBuilder.Entity<SummaryOfSalesByQuarter>(entity =>
             {
                 entity.HasNoKey();
@@ -804,6 +822,30 @@ namespace ConsoleApp.Data.Scaffolded
                     .HasForeignKey(d => d.RegionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Territories_Region");
+            });
+
+            modelBuilder.Entity<Wine>(entity =>
+            {
+                entity.HasKey(e => e.WineId)
+                    .HasName("PK_wine")
+                    .IsClustered(false);
+
+                entity.ToTable("Wine");
+
+                entity.Property(e => e.WineId).HasColumnName("WineID");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.ShopId).HasColumnName("ShopID");
+
+                entity.HasOne(d => d.Shop)
+                    .WithMany(p => p.Wines)
+                    .HasForeignKey(d => d.ShopId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Shop_wine");
             });
 
             OnModelCreatingPartial(modelBuilder);
