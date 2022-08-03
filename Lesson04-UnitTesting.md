@@ -18,6 +18,10 @@ Write tests first code after
 ## Triple 'A' - Arrange, Act, Assert
 How to write test code
 
+Arrange/Setup: You setup everything in order to test (Like mocked services, test data)  
+Act: You execute the test  
+Assert: You check what you need to  
+
 ## Nunit
 Project setup
 ![image](https://user-images.githubusercontent.com/63453969/182658297-e364890f-de66-4439-8199-c5a4660462aa.png)
@@ -72,13 +76,6 @@ namespace TestProject1
 {
     public class Tests
     {
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
-
-
         [Test]
         public void CheckoutCanCalcThreeAs()
         {
