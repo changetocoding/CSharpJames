@@ -16,6 +16,20 @@ Write tests first code after
 ## Triple 'A' - Arrange, Act, Assert
 How to write test code
 
+## Nunit
+Project setup
+![image](https://user-images.githubusercontent.com/63453969/182658297-e364890f-de66-4439-8199-c5a4660462aa.png)
+Or update your csproj with
+```
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" version="4.1.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.2.0" />
+  </ItemGroup>
+```
+
 
 # Homework
 From now on when sumbitting your homework you are expected to have a unit test with each one.
