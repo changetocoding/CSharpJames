@@ -2,7 +2,9 @@
 This was funny - http://web.archive.org/web/20160521015258/https://lostechies.com/derickbailey/2009/02/11/solid-development-principles-in-motivational-pictures/
 
 ## Why we test
-Confidence
+Confidence - To be certain our code works
+
+Doing manual debugging is time consuming and error prone (We might miss something). We want to automate the way of knowing if something has gone wrong quickly.
 
 
 ## TDD - Test driven development
@@ -30,6 +32,8 @@ Or update your csproj with
   </ItemGroup>
 ```
 
+## Your first test
+Imagine your class looked like this
 ```Checkout.cs
 public class Checkout
     {
@@ -57,7 +61,7 @@ public class Checkout
     }
 ```
 
-
+In your test project you add a dependency to your main project then write a test:
 ```Test.cs
 using System;
 using System.Collections.Generic;
