@@ -81,15 +81,24 @@ strategy: Strategy2, date: 2017-01-01, capital: 2000
 ```
 
 2. Cumulative P&Ls
-Returns a daily time series of cumulative P&Ls aggregated by region
+Returns a daily time series of cumulative P&Ls aggregated by region. The cumluative pnl is the sum of all the pnl upto that date.
 e.g. Command:
 ```
 cumulative-pnl EU
 ```
-Response
+Response assuming pnl is like this:
+Date | Pnl
+------------- | -------------
+2017-01-01 | 1000
+2017-01-02 | 1000
+2017-01-03 | 500
+2017-01-04 | 1000
+
 ```
 date: 2017-01-01, cumulativePnl: 1000
-date: 2017-01-01, cumulativePnl: 2000
+date: 2017-01-02, cumulativePnl: 2000
+date: 2017-01-03, cumulativePnl: 2500
+date: 2017-01-04, cumulativePnl: 3500
 ```
 
 Work together on the task. It may take longer than a week to complete
