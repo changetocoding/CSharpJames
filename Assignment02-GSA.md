@@ -68,7 +68,7 @@ Your strategy class should now look more like this
 ## Part 3 Console App 
 Create a console app that:
 
-1. Given a list of strategies returns a time series of monthly capital values for the strategies.
+1. Given a list of strategies returns a time series of monthly capital values for the strategies. You must support the abilty to specify more than 1 strategy.
 
 e.g. Command:
 ```
