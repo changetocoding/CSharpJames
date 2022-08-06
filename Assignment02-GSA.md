@@ -70,7 +70,7 @@ Create a console app that:
 
 1. Given a list of strategies returns a time series of monthly capital values for the strategies. You must support the abilty to specify more than 1 strategy.
 
-e.g. Command:
+Example Command: (Note multiple strategies can be specified)
 ```
 Capital "Strategy1,Strategy2"
 ```
@@ -82,7 +82,8 @@ strategy: Strategy2, date: 2017-01-01, capital: 2000
 
 2. Cumulative P&Ls
 Returns a daily time series of cumulative P&Ls aggregated by *region*. The cumluative pnl is the sum of all the pnl upto that date in that region.  
-e.g. Command: Note Region must be specified
+
+Example Command: (Note Region must be specified)
 ```
 cumulative-pnl EU
 ```
