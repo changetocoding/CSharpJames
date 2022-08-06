@@ -105,5 +105,4 @@ date: 2017-01-04, cumulativePnl: 3500
 ...
 ```
 
-Work together on the task. It may take longer than a week to complete
 
