@@ -96,10 +96,13 @@ Date | Pnl
 2017-01-04 | 1000
 
 ```
+Cumulative Pnl for region EU
+
 date: 2017-01-01, cumulativePnl: 1000
 date: 2017-01-02, cumulativePnl: 2000
 date: 2017-01-03, cumulativePnl: 2500
 date: 2017-01-04, cumulativePnl: 3500
+...
 ```
 
 Work together on the task. It may take longer than a week to complete
