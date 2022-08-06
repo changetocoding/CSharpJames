@@ -1,8 +1,22 @@
 # Entity framework 2
 
-### Querying
-.Where()  
-.Any()  
+### Adding a record and Querying
+```csharp
+            // Adding a record
+            using (var dbContext = new GsaContext())
+            {
+                var newuser = new User() {Email = "Test", Name = "Name"};
+                dbContext.Users.Add(newuser);
+                dbContext.SaveChanges();
+            }
+
+
+            // Querying
+            using (var dbContext = new GsaContext())
+            {
+                var users = dbContext.Users.Where(x => x.Name == "Tom").ToList();
+            }
+```
 
 ### Updating a record
 ```csharp
@@ -19,19 +33,84 @@ using (var db = new MyContextDB())
 
 ### Relationships aka related entities
 Find them annoying (don't mean with Lore). Leads to problems with lazy loading
+```cs
+// Other way to do it: Include
+        // Must add: using Microsoft.EntityFrameworkCore;
+        public Customer GetCustomerForOrder2(int orderId)
+        {
+            using (var db = new NorthwindContext())
+            {
+                var order = db.Orders
+                    .Include(o => o.Customer)
+                    .Include(o => o.Employee)
+                    .Where(x => x.OrderId == orderId)
+                    .Single()                    ;
+               
+                return order.Customer;
+            }
+        }
 
+        public Customer GetCustomerForOrder(int orderId)
+        {
+            using (var db = new NorthwindContext())
+            {
+                var order = db.Orders.Where(x => x.OrderId == orderId).Single();
+                var customerId = order.CustomerId;
+                var customer = db.Customers.Where(x => x.CustomerId == customerId).Single();
+                return customer;
+            }
+        }
 
+```
+### Relationships when loading multiple rows
+```cs
+        public List<Customer> GetCustomerForOrders(List<int> orderIds)
+        {
+            // Does 2 db queries. Most efficent way
+            using (var db = new NorthwindContext())
+            {
+                var customers = db.Orders.Where(x => orderIds.Contains(x.OrderId))
+                    .Select(x => x.CustomerId).ToList();
+   
+                var customer = db.Customers.Where(x => customers.Contains(x.CustomerId)).ToList();
+                return customer;
+            }
+        }
 
+        // Other way to do it: Include
+        // Must add: using Microsoft.EntityFrameworkCore;
+        public List<Customer> GetCustomerForOrders2(List<int> orderIds)
+        {
+            // Nasty query: Less efficent
+            using (var db = new NorthwindContext())
+            {
+                var orders = db.Orders
+                    .Include(o => o.Customer)
+                    .Where(x => orderIds.Contains(x.OrderId));
 
-### Loading related properties
-- Lazy loading - When accessed will try to load it.
-- Eager Loading using ".Includes()"
-- Personally prefer no loading (https://docs.microsoft.com/en-us/ef/core/querying/related-data/eager)
+                return orders.Select(x => x.Customer).ToList();
+            }
+        }
 
-Also with entity framework occassionally tries to do really dumb queries with include so beware of that
+        public List<Customer> GetCustomerForOrders3(List<int> orderIds)
+        {
+            // More efficent
+            using (var db = new NorthwindContext())
+            {
+                // Use load instead of include
+                var orders = db.Orders
+                    .Where(x => orderIds.Contains(x.OrderId));
+                db.Customers.Load();
 
+                return orders.Select(x => x.Customer).ToList();
+            }
+        }
+```
 
 ### Directly executing a query on db
+```cs
+// See delete all rows in table
+```
 
 # Some tips from microsoft
 - https://docs.microsoft.com/en-us/ef/core/performance/efficient-querying
