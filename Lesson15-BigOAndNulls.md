@@ -1,3 +1,5 @@
+# Null coalasing operators, Big-O and speed
+
 # Null coalasing operators
 Ever done this?
 ```cs
@@ -52,3 +54,8 @@ It's a way of describing how fast an algorithm is and falls into one of several 
 
 ![Cheatsheet](https://miro.medium.com/max/1400/1*wv3W3jYq7EHCDiwYVaCXrA.png)
 ![Performance](https://user-images.githubusercontent.com/63453969/152640502-a92271a4-20f9-4aec-b36b-6ca7b738893f.png)
+
+
+# Efficency
+- write code first. Then refactor for readabilty. And if can a bit of efficency
+- Only try to make code more efficent in interviews and when running
