@@ -58,4 +58,5 @@ It's a way of describing how fast an algorithm is and falls into one of several 
 
 # Efficency
 - write code first. Then refactor for readabilty. And if can a bit of efficency
-- Only try to make code more efficent in interviews and when running
+- Only try to make code more efficent in interviews and when running really slowly
+- When running slowly add timers to work out slow bits. Then optimise that
