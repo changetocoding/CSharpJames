@@ -58,6 +58,9 @@ public void MyMethod(){
   }
 }
 ```
+It is bad because each thread creates its own object to lock on. So the lock is not shared.
+
+You should almost always be locking on a private static object. If you are not locking on a private static object you have probably made a mistake.
 
 **Avoid locking on strings** 
 **Prefer using a static obj that is only for locking**  
