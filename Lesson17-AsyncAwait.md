@@ -84,5 +84,6 @@ public class ItProxy
 ### Async all the way concept
 
 ### Configure await false
+https://devblogs.microsoft.com/dotnet/configureawait-faq/
 
 ### Async Task vs Async void
